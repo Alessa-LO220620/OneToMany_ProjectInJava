@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Lista Funcionarios da OneToMany</h5>
+    <button (click)="callFormRegister()" class="btn btn-warning">Cadastrar Funcionario</button>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nome do Funcionario</th>
+            <th scope="col">Salario</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let funcionario of funcionarios'>
+            <th scope="row">{{funcionario.id_func}}</th>
+            <td>{{funcionario.fnc_nome}}</td>
+            <td>{{funcionario.fnc_salario}}</td>
+            <td>{{funcionario.fnc_cidade}}</td>
+            <td><i routerLink="/funcionarioEditar/{{funcionario.id_func}}"class="fas fa-edit text-info"></i>
+              <i routerLink="/funcionarioExcluir/{{funcionario.id_func}}" class="fas fa-trash-alt text-danger mx-2"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

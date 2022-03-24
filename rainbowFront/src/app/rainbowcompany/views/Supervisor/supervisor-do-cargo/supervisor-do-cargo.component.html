@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dados de Cargo</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Codigo do Cargo</label>
+                <input type="text" readonly class="form-control" [(ngModel)]="cargo.cargo_nome" name="cargo_nome">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Descricao do Cargo</label>
+                <input type="text"readonly class="form-control" [(ngModel)]="cargo.cargo_descricao" name="cargo_descricao">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Setor</label>
+                <input type="text"readonly class="form-control" [(ngModel)]="cargo.cargo_setor" name="cargo_setor">
+              </div>
+              <button routerLink="/cargo" class="btn btn-secondary mx-3">Cancelar</button>
+            </form>
+  
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="card">
+          <h5 class="card-title mx-3">Supervisor do Cargo {{supervisor.super_nome}} </h5>
+          <div class="card-body">
+  
+            <div class="mb-3">
+              <label class="form-label">Nome Supervisor</label>
+              <input type="text" readonly  [(ngModel)]="supervisor.super_nome" class="form-control" name="super_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Formação do Supervisor</label>
+              <input type="text"readonly class="form-control" name="super_formacao" [(ngModel)]="supervisor.super_formacao">
+            </div>
+            <hr>
+            <div class="card">
+            <h5 class="card-title my-4"> Escolha um novo supervisor para o Cargo:</h5>
+  
+  
+            <div class="card-body">
+            <select  [(ngModel)]="supervisorSemCargoEscolhido" name="supervisorSemCargoEscolhido" (ngModelChange)="showSupervisor()">
+                <option *ngFor="let supervisor of supervisorSemCargo" [ngValue]="supervisor" >
+                  {{supervisor.super_nome}} - {{supervisor.super_formacao}}
+                </option>
+              </select>
+              <button (click)="addSupervisor()" class="btn btn-primary my-3">Salvar</button>
+            </div>
+          </div>
+            <hr>
+            <div class="card my-3">
+              <h5 class="card-title">Deixar cargo sem Supervisor?</h5>
+              <div class="card-body">
+              <button (click)="leavePositionWithoutSupervisor()" class="btn btn-secondary">Confirmar</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+

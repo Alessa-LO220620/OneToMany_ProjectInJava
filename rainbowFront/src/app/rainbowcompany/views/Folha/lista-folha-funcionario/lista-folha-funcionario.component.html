@@ -1,0 +1,45 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Funcionario: {{id_func}} - {{nomeFuncionario}}</h5>
+      <button routerLink="/folha/cadastro/{{id_func}}" class="btn btn-danger" >Cadastrar Folha de Pagamento</button>
+     <div>
+      <table class="table">
+        <thead>
+          <tr >
+            <th scope="col">Codigo</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data do Pagamento</th>
+            <th scope="col">Valor do Salário</th>
+            <th scope="col">Valor do Benefício</th>
+            <th scope="col">Faltas no Mês</th>
+            <th scope="col">Status</th>
+            <th scope="col">Confirmar ao Financeiro</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let folha of folhas">
+            <th scope="row">{{folha.codigoFolha}}</th>
+            <td>{{folha.folhaDescricao}}</td>
+            <td>{{folha.dataPagamento | date : 'dd/MM/yyyy' }}</td>
+            <td>{{folha.salario | currency:'BRL'}}</td>
+            <td>{{folha.beneficio}}</td>
+            <td>{{folha.num_falta}}</td>
+            <td>{{folha.status}}</td>
+            <td>
+              <button (click)="sendToFinancePayroll(folha.codigoFolha)" *ngIf="folha.status == 'ENVIADOAOFINANCEIRO'" class="btn btn-success mx-3">ENVIAR</button>
+            </td>
+              
+              <td><i routerLink="/folha" class="fas fa-edit text-info" ></i>
+                <i routerLink="" class="fas fa-trash-alt text-danger mx-2" ></i>
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <button routerLink="" class="btn btn-secondary">Voltar</button>
+    </div>
+    </div>
+  </div>  

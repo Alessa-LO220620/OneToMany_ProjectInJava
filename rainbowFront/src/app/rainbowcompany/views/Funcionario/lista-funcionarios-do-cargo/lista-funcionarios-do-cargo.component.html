@@ -1,0 +1,30 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Funcionarios da Cargo: {{id_cargo}}</h5>
+      <button routerLink="/funcionario/lista" class="btn btn-danger">Controle de Funcionarios</button>
+     <div>
+      <table class="table">
+        <thead>
+          <tr >
+            <th scope="col">Codigo do Funcionario</th>
+            <th scope="col">Nome do funcionario</th>
+            <th scope="col">Salário</th>
+            <th scope="col">Cidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let funcionario of funcionarios">
+            <th scope="row">{{funcionario.id_func}}</th>
+            <td>{{funcionario.fnc_nome}}</td>
+            <td>{{funcionario.fnc_salario}}</td>
+            <td>{{funcionario.fnc_cidade}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+  
+  
+  
+  

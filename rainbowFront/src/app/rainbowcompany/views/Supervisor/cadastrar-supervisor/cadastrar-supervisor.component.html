@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Cadastro de Supervisor</h5>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nome do Supervisor</label>
+          <input type="text" class="form-control" [(ngModel)]="supervisor.super_nome" name="super_nome">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Formação do Supervisor</label>
+          <input type="text" class="form-control"  [(ngModel)]="supervisor.super_formacao" name="super_formacao">
+        </div>
+        <button (click)="registerSupervisor()" class="btn btn-primary ">Cadastrar</button>
+        <button type="reset" class="btn btn-secondary mx-3">Limpar campos</button>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">Foto do Supervisor</label>
+            <input type="file" class="form-control" [disabled]="!supervisorcadastrado" (change)="subirFoto($event)" name="super_foto">
+          </div>
+        <button class="btn btn-danger mx-3" routerLink="/listaSupervisor">Voltar</button>
+      </form>
+    </div>
+  </div>
+

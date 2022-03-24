@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Edição de Supervisor</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do supervisor</label>
+        <input type="text" class="form-control" [(ngModel)]="supervisor.super_nome" name="super_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descrição de supervisor</label>
+        <input type="text" class="form-control" [(ngModel)]="supervisor.super_formacao" name="super_formacao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Foto do Supervisor</label>
+        <input type="file" class="form-control" readonly name="super_foto">
+      </div>
+      <button (click)="editSupervisor()" class="btn btn-primary ">Salvar Edição</button>
+      <button type="reset" class="btn btn-secondary mx-3">Limpar campos</button>
+      <button routerLink="/supervisor/listaSupervisor" class="btn btn-secondary mx-3">Voltar</button>
+    </form>
+  </div>
+</div>

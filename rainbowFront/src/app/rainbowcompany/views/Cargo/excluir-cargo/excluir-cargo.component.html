@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Exclusão de Cargo</h5>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nome do Cargo</label>
+          <input type="text" class="form-control" readonly [(ngModel)]="cargo.cargo_nome" name="cargo_nome">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Descrição de Cargo</label>
+          <input type="text" class="form-control" readonly [(ngModel)]="cargo.cargo_descricao" name="cargo_descricao">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Setor do Cargo</label>
+            <input type="text" class="form-control"  readonly [(ngModel)]="cargo.cargo_setor" name="cargo_setor">
+          </div>
+        <button (click)="deletePosition()" class="btn btn-primary ">Excluir Cargo</button>
+        <button class="btn btn-danger mx-3" routerLink="/cargo">Voltar</button>
+      </form>
+    </div>
+  </div>

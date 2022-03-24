@@ -1,0 +1,7 @@
+.card{
+    display:flex;
+    margin: auto;
+    width: 90%;
+    margin-top: 20px;
+    background-image: url('/src/assets/img/bgg2.png');
+}

@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Cargos</h5>
+      <button (click)="navegarCadastroCargo()" class="btn btn-warning">Cadastrar Cargo</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nome do Cargo</th>
+            <th scope="col">Descrição do Cargo</th>
+            <th scope="col">Codigo Supervisor</th>
+            <th scope="col">Supervisor</th>
+            <th scope="col">Formação do Supervisor</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let cargo of cargos'>
+            <th scope="row">{{cargo.id_cargo}}</th>
+            <td>{{cargo.cargo_nome}}</td>
+            <td>{{cargo.cargo_descricao}}</td>
+            <td>{{cargo.id_super}}</td>
+            <td>{{cargo.super_nome}}</td>
+            <td>{{cargo.super_formacao}}</td>
+            <td><i routerLink="/funcionario/listaDoCargo/{{cargo.id_cargo}}" class="fa-solid fa-user"></i></td>
+            <td><i routerLink="/supervisor/supervisorDoCargo/{{cargo.id_cargo}}" class="fa-solid fa-chalkboard-user"></i></td>
+            <td><i routerLink="/editarCargo/{{cargo.id_cargo}}"class="fas fa-edit text-info"></i>
+              <i routerLink="/deletarCargo/{{cargo.id_cargo}}"class="fas fa-trash-alt text-danger mx-2"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  </div>
+  

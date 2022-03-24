@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Supervisores</h5>
+      <button routerLink="/supervisor/cadastroSupervisor" class="btn btn-warning">Cadastrar Supervisor</button>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Foto</th>
+              <th scope="col">Nome do Supervisor</th>
+              <th scope="col">Formação</th>
+              <th scope="col">Cargo</th>
+              <th scope="col">Setor</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let supervisor of supervisores">
+              <th scope="row">{{supervisor.id_super}}</th>
+              <td>{{supervisor.super_foto}}</td>
+              <td>{{supervisor.super_nome}}</td>
+              <td>{{supervisor.super_formacao}}</td>
+              <td>{{supervisor.cargo_nome}}</td>
+              <td>{{supervisor.cargo_setor}}</td>
+              <td><i routerLink="/supervisor/atribuirCargo/{{supervisor.id_super}}"class="fa-solid fa-user"></i></td>
+              <td><i routerLink="/supervisor/editar-supervisor/{{supervisor.id_super}}"class="fas fa-edit text-info"></i>
+                <i routerLink="/supervisor/excluir-supervisor/{{supervisor.id_super}}/{{supervisor.id_cargo}}" class="fas fa-trash-alt text-danger mx-2"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

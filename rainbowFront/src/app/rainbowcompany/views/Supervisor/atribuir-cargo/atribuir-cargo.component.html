@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dados do Supervisor</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Nome do Supervisor</label>
+                <input type="text" readonly class="form-control" [(ngModel)]="supervisor.super_nome" name="super_nome">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Formação do Supervisor</label>
+                <input type="text"readonly class="form-control" [(ngModel)]="supervisor.super_formacao" name="super_formacao">
+              </div>
+              <button class="btn btn-secondary mx-3">Cancelar</button>
+            </form>
+  
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="card">
+          <h5 class="card-title mx-3">Cargo do Supervisor</h5>
+          <div class="card-body">
+  
+            <div class="mb-3">
+              <label class="form-label">Nome cargo</label>
+              <input type="text" readonly [(ngModel)]="cargo.cargo_nome" class="form-control"  name="cargo_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descrição da cargo</label>
+              <input type="text"readonly class="form-control" [(ngModel)]="cargo.cargo_descricao" name="cargo_descricao">
+            </div>
+            <hr>
+            <div class="card">
+            <h5 class="card-title my-4"> Escolha um novo cargo para o Supervisor:</h5>
+  
+  
+            <div class="card-body">
+            <select  [(ngModel)]="cargoSemSupervisorEscolhido" name="cargoSemSupervisorEscolhido" (ngModelChange)="choosePosition()">
+                <option *ngFor="let cargo of cargoSemSupervisor" [ngValue]="cargo" >
+                  {{cargo.cargo_nome}} - {{cargo.cargo_descricao}}
+                </option>
+              </select>
+              <button (click)="assignPosition()" class="btn btn-primary my-3">Salvar</button>
+            </div>
+          </div>
+            <hr>
+            <div class="card my-3">
+              <h5 class="card-title">Deixar Supervisor sem cargo?</h5>
+              <div class="card-body">
+              <button (click)="leavePositionWithoutSupervisor()" class="btn btn-secondary">Confirmar</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  

@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Funcionarios OneToMany</h5>
+      <button routerLink="/funcionarioCadastro" class="btn btn-danger">Cadastrar funcionario</button>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Codigo do funcionario</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Salario</th>
+              <th scope="col">Cidade</th>
+              <th scope="col">Codigo do Cargo</th>
+              <th scope="col">Cargo</th>
+              <th scope="col">Atribuir Cargo</th>
+              <th scope="col">Folha de Pagamento</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let funcionario of funcionarios">
+              <th scope="row">{{funcionario.id_func}}</th>
+              <td>{{funcionario.fnc_nome}}</td>
+              <td>{{funcionario.fnc_salario}}</td>
+              <td>{{funcionario.fnc_cidade}}</td>
+              <td>{{funcionario.id_cargo}}</td>
+              <td>{{funcionario.cargo_nome}}</td>
+              <td><button routerLink="/funcionario/atrubuirCargo/{{funcionario.id_func}}/{{funcionario.id_cargo}}" class="btn btn-danger">Cargo</button></td>
+              <td><i routerLink="/folha/listaPorFuncionario/{{funcionario.id_func}}" class="fa-solid fa-coins"></i></td>
+              <td><i routerLink="/funcionarioEditar/{{funcionario.id_func}}" class="fas fa-edit text-info"></i>
+                <i routerLink="/funcionarioExcluir/{{funcionario.id_func}}" class="fas fa-trash-fnct text-danger mx-2"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

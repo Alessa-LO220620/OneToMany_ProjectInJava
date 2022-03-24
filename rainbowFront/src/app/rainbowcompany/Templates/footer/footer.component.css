@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  background: #37517e;
+  opacity: 0.6;
+}
+
+.copyright {
+  text-align: center;
+  color: aliceblue;
+}
+@media (max-width: 768px) {
+  #footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #footer .copyright {
+    text-align: center;
+    float: none;
+  }
+}
+  

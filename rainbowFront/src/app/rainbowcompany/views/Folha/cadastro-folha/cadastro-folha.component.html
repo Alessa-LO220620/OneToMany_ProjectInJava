@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Lançamento de Folha de Pagamento</h5>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Descrição</label>
+          <input type="text" class="form-control" [(ngModel)]="folha.folhaDescricao" name="folhaDescricao">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Data de Pagamento</label>
+          <input type="date" class="form-control" [(ngModel)]="folha.dataPagamento" name="dataPagamento">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Salario Liquido</label>
+          <input type="text"  class="form-control" [(ngModel)]="folha.salario" name="salario">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Valor do Benefício</label>
+          <input type="text"  class="form-control" [(ngModel)]="folha.beneficio" name="beneficio">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Faltas do Mês</label>
+          <input type="text"  class="form-control" [(ngModel)]="folha.num_falta" name="num_falta">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <input type="text" class="form-control" readonly value="ENVIADOAOFINANCEIRO" [(ngModel)]="folha.status" name="status">
+        </div>
+        <button (click)="insertPayroll()" class="btn btn-primary ">Cadastrar</button>
+        <button class="btn btn-secondary mx-3">Cancelar</button>
+      </form>
+  
+    </div>
+  </div>
+  
+  
+  
